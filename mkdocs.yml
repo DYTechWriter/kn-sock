@@ -29,6 +29,52 @@ nav:
       - HTTP API Server: real_world_examples/http_api_server.py
       - Live Streaming: real_world_examples/live_streaming.py
       - Test Utilities: real_world_examples/test_utilities.py
+  - API:
+      - TEST DOC: api/test.md
+      - TCP TEST: api/tcp_test.md
+      - API Reference: api/api_reference.md
+      - Overview: api/index.md
+      - TCP: api/tcp.md
+      - UDP: api/udp.md
+      - HTTP: api/http.md
+      - WebSocket: api/websocket.md
+      - JSON Messaging: api/json.md
+      - File Transfer: api/file_transfer.md
+      - Live Streaming: api/live_stream.md
+      - Pub/Sub: api/pubsub.md
+      - RPC: api/rpc.md
+      - Queues: api/queue.md
+      - Config: api/config.md
+      - Troubleshooting: api/troubleshooting.md
+  - TCP Utilities:
+      - Overview: tcp/index.md
+      - Using the CLI: tcp/cli.md
+      - Using the Python API: tcp/python-api.md
+      - API Reference: tcp/reference.md
+      - Testing: tcp/testing.md
 theme:
   name: material
   logo: kn-sock_logo.png
+markdown_extensions:
+  - admonition
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - pymdownx.details
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [kn_sock]  # Path to your package
+          options:
+            show_source: false
+            show_root_full_path: false
+            show_root_toc_entry: true
+            heading_level: 3
+            docstring_style: google
+            members_order: source
+            filters: ["!^_"]        # hide private members
+            show_if_no_docstring: false
+            show_signature_annotations: true
+            signature_crossrefs: true
