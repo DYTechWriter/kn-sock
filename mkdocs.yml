@@ -34,9 +34,6 @@ nav:
       - TCP TEST: api/tcp_test.md
       - API Reference: api/api_reference.md
       - Overview: api/index.md
-      - TCP: api/tcp.md
-      - UDP: api/udp.md
-      - HTTP: api/http.md
       - WebSocket: api/websocket.md
       - JSON Messaging: api/json.md
       - File Transfer: api/file_transfer.md
@@ -46,12 +43,39 @@ nav:
       - Queues: api/queue.md
       - Config: api/config.md
       - Troubleshooting: api/troubleshooting.md
+  - Guides:
+      - Interactive TCP Shell: guides/interactive_cli.md
+  - Command-Line Interface:
+      - Overview: cli/index.md
+  - HTTP:
+      - Overview: http/index.md
+      - Using the CLI: http/cli.md
+      - Using the Python API: http/python-api.md
+      - API Reference: http/reference.md
+      - Testing: http/testing.md
+  - WebSocket:
+      - Overview: websocket/index.md
+      - Using the CLI: websocket/cli.md
+      - Using the Python API: websocket/python-api.md
+      - API Reference: websocket/reference.md
+      - Testing: websocket/testing.md
   - TCP Utilities:
       - Overview: tcp/index.md
       - Using the CLI: tcp/cli.md
       - Using the Python API: tcp/python-api.md
       - API Reference: tcp/reference.md
       - Testing: tcp/testing.md
+  - UDP Utilities:
+    - Overview: udp/index.md
+    - Using the CLI: udp/cli.md
+    - Using the Python API: udp/python-api.md
+    - API Reference: udp/reference.md
+    - Testing: udp/testing.md
+  - Archive:
+    - HTTP: archive/http.md
+    - TCP: archive/tcp.md
+    - UDP: archive/udp.md
+    - WebSocket: archive/websocket.md
 theme:
   name: material
   logo: kn-sock_logo.png
