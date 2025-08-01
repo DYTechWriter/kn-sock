@@ -1,0 +1,5359 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kn-sock.khagendraneupane.com.np/">
+      
+      
+      
+        <link rel="next" href="examples/server_live.py">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>kn-sock</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kn-sock" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="kn-sock" class="md-header__button md-logo" aria-label="kn-sock" data-md-component="logo">
+      
+  <img src="kn-sock_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kn-sock
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/KhagendraN/kn-sock" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="kn-sock" class="md-nav__button md-logo" aria-label="kn-sock" data-md-component="logo">
+      
+  <img src="kn-sock_logo.png" alt="logo">
+
+    </a>
+    kn-sock
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/KhagendraN/kn-sock" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Messaging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Messaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-tcp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous TCP Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-tcp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous TCP Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secure-tcp-ssltls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure TCP (SSL/TLS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secure TCP (SSL/TLS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-secure-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous Secure TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-secure-tcp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous Secure TCP Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-secure-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Secure TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-secure-tcp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Secure TCP Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-connection-pooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Connection Pooling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Connection Pooling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage-plain-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage (Plain TCP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-usage-ssltls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Usage (SSL/TLS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP Messaging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UDP Messaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-udp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous UDP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-udp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous UDP Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-udp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous UDP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-udp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous UDP Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-socket-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Socket Communication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Socket Communication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-over-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer over TCP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Transfer over TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#async-file-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Async File Transfer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-videoaudio-streaming-multi-video-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Video/Audio Streaming (Multi-Video Selection)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live Video/Audio Streaming (Multi-Video Selection)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-stream-server-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Stream Server (Python)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-stream-client-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Stream Client (Python)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage-with-livestreamserverlivestreamclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage with LiveStreamServer/LiveStreamClient
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-streaming-via-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Streaming via CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebSocket Support
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WebSocket Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-websocket-echo-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: WebSocket Echo Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-websocket-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: WebSocket Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httphttps-client-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/HTTPS Client Support
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP/HTTPS Client Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-http-getpost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: HTTP GET/POST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-https-getpost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: HTTPS GET/POST
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-static-file-and-route-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Static File and Route Handlers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishsubscribe-pubsub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish/Subscribe (Pub/Sub)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publish/Subscribe (Pub/Sub)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-pubsub-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Pub/Sub Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-pubsub-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Pub/Sub Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-procedure-call-rpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote Procedure Call (RPC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Procedure Call (RPC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-rpc-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: RPC Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-rpc-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: RPC Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command-Line Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decorators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decorators
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decorators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log_exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      log_exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      retry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      measure_time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensure_json_input" class="md-nav__link">
+    <span class="md-ellipsis">
+      ensure_json_input
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_free_port" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_free_port
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_local_ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_local_ip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chunked_file_reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      chunked_file_reader
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recv_all" class="md-nav__link">
+    <span class="md-ellipsis">
+      recv_all
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progress Display
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Progress Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#print_progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      print_progress
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Utility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is_valid_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_valid_json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easysocketerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      EasySocketError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-related-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection-related Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection-related Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectiontimeouterror" class="md-nav__link">
+    <span class="md-ellipsis">
+      ConnectionTimeoutError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portinuseerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      PortInUseError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-protocol-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data &amp; Protocol Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data &amp; Protocol Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalidjsonerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidJSONError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsupportedprotocolerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      UnsupportedProtocolError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Transfer Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filetransfererror" class="md-nav__link">
+    <span class="md-ellipsis">
+      FileTransferError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebSocket Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#httphttps-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/HTTPS Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pubsub-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pub/Sub Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpc-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPC Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-streaming-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Streaming Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-client-video-chat-with-voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Client Video Chat with Voice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Client Video Chat with Voice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-video-chat-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Video Chat Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-video-chat-client-with-room-and-nickname" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Video Chat Client (with Room and Nickname)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Chat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Solutions:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real World Examples
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/server_live.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Streaming Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/client_live.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Streaming Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/tcp_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCP Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/tcp_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCP Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/udp_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UDP Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/udp_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UDP Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/http_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/http_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/https_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTPS Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/websocket_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSocket Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/websocket_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSocket Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/pubsub_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PubSub Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/pubsub_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PubSub Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/rpc_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPC Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/rpc_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPC Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Browse All
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Real World Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Real World Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="real_world_examples/iot_protocol.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IoT Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="real_world_examples/file_transfer.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Transfer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="real_world_examples/chat_app.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chat Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="real_world_examples/microservice_rpc.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microservice RPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="real_world_examples/remote_control.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Remote Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="real_world_examples/http_api_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP API Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="real_world_examples/live_streaming.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Streaming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="real_world_examples/test_utilities.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TEST DOC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/tcp_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCP TEST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/api_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/websocket.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSocket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Messaging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/file_transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Transfer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/live_stream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Streaming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/pubsub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pub/Sub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/rpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Queues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/interactive_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive TCP Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Command-Line Interface
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Command-Line Interface
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HTTP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            HTTP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http/python-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the Python API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    WebSocket
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            WebSocket
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="websocket/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="websocket/python-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the Python API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="websocket/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="websocket/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TCP Utilities
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            TCP Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tcp/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tcp/python-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the Python API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tcp/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tcp/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UDP Utilities
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            UDP Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="udp/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="udp/python-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the Python API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="udp/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="udp/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="archive/http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="archive/tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="archive/udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="archive/websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSocket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Messaging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Messaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-tcp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous TCP Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-tcp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous TCP Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secure-tcp-ssltls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure TCP (SSL/TLS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secure TCP (SSL/TLS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-secure-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous Secure TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-secure-tcp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous Secure TCP Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-secure-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Secure TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-secure-tcp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Secure TCP Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-connection-pooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Connection Pooling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Connection Pooling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage-plain-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage (Plain TCP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-usage-ssltls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Usage (SSL/TLS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP Messaging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UDP Messaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-udp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous UDP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-udp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous UDP Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-udp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous UDP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-udp-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous UDP Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-socket-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Socket Communication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Socket Communication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-over-tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer over TCP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Transfer over TCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#async-file-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Async File Transfer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-videoaudio-streaming-multi-video-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Video/Audio Streaming (Multi-Video Selection)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live Video/Audio Streaming (Multi-Video Selection)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-stream-server-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Stream Server (Python)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-stream-client-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Stream Client (Python)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage-with-livestreamserverlivestreamclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage with LiveStreamServer/LiveStreamClient
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-streaming-via-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Streaming via CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebSocket Support
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WebSocket Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-websocket-echo-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: WebSocket Echo Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-websocket-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: WebSocket Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httphttps-client-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/HTTPS Client Support
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP/HTTPS Client Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-http-getpost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: HTTP GET/POST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-https-getpost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: HTTPS GET/POST
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-static-file-and-route-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Static File and Route Handlers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishsubscribe-pubsub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publish/Subscribe (Pub/Sub)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publish/Subscribe (Pub/Sub)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-pubsub-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Pub/Sub Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-pubsub-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Pub/Sub Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-procedure-call-rpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remote Procedure Call (RPC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote Procedure Call (RPC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-rpc-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: RPC Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-rpc-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: RPC Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command-Line Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decorators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decorators
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decorators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log_exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      log_exceptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      retry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      measure_time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ensure_json_input" class="md-nav__link">
+    <span class="md-ellipsis">
+      ensure_json_input
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_free_port" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_free_port
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_local_ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_local_ip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chunked_file_reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      chunked_file_reader
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recv_all" class="md-nav__link">
+    <span class="md-ellipsis">
+      recv_all
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progress Display
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Progress Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#print_progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      print_progress
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Utility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON Utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is_valid_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_valid_json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easysocketerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      EasySocketError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-related-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection-related Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection-related Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectiontimeouterror" class="md-nav__link">
+    <span class="md-ellipsis">
+      ConnectionTimeoutError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portinuseerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      PortInUseError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-protocol-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data &amp; Protocol Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data &amp; Protocol Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invalidjsonerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      InvalidJSONError
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsupportedprotocolerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      UnsupportedProtocolError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Transfer Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filetransfererror" class="md-nav__link">
+    <span class="md-ellipsis">
+      FileTransferError
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      UDP Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-transfer-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Transfer Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebSocket Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#httphttps-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/HTTPS Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pubsub-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pub/Sub Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpc-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPC Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-streaming-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live Streaming Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-client-video-chat-with-voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Client Video Chat with Voice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Client Video Chat with Voice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-video-chat-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Video Chat Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-video-chat-client-with-room-and-nickname" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Video Chat Client (with Room and Nickname)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text Chat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Solutions:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real World Examples
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p align="center">
+  <img src="kn-sock_logo.png" alt="kn-sock logo" width="128"/>
+</p>
+
+<h1 id="kn-sock">kn-sock</h1>
+<p><img alt="PyPI version" src="https://img.shields.io/pypi/v/kn-sock" />
+<a href="https://pypi.org/project/kn-sock/"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/kn-sock" /></a></p>
+<p>A simplified socket programming toolkit for Python.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>TCP/UDP Messaging</strong>: Supports both synchronous and asynchronous communication.</li>
+<li><strong>JSON Socket Communication</strong>: Easily send and receive JSON data over sockets.</li>
+<li><strong>File Transfer over TCP</strong>: Transfer files between clients and servers.</li>
+<li><strong>Threaded/Multi-Client Support</strong>: Handle multiple clients concurrently.</li>
+<li><strong>Command-Line Interface</strong>: Simple CLI for quick socket operations.</li>
+</ul>
+<p><a href="https://github.com/KhagendraN/kn-sock/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/KhagendraN/kn-sock?style=social" /></a></p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>kn-sock
+</code></pre></div>
+<h2 id="usage">Usage</h2>
+<h3 id="tcp-messaging">TCP Messaging</h3>
+<h4 id="synchronous-tcp-server">Synchronous TCP Server</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_tcp_server</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_tcp_message</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">client_socket</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle incoming TCP messages.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (bytes): The data received from the client.</span>
+<span class="sd">        addr (tuple): The address of the client.</span>
+<span class="sd">        client_socket (socket.socket): The client socket.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received from </span><span class="si">{</span><span class="n">addr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">client_socket</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Message received&quot;</span><span class="p">)</span>
+
+<span class="n">start_tcp_server</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="n">handle_tcp_message</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="synchronous-tcp-client">Synchronous TCP Client</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_tcp_message</span>
+
+<span class="n">send_tcp_message</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="asynchronous-tcp-server">Asynchronous TCP Server</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_async_tcp_server</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">handle_tcp_message</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">writer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle incoming TCP messages asynchronously.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (bytes): The data received from the client.</span>
+<span class="sd">        addr (tuple): The address of the client.</span>
+<span class="sd">        writer (asyncio.StreamWriter): The writer object for the client.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received from </span><span class="si">{</span><span class="n">addr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Message received&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">writer</span><span class="o">.</span><span class="n">drain</span><span class="p">()</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">start_async_tcp_server</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="n">handle_tcp_message</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="asynchronous-tcp-client">Asynchronous TCP Client</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_tcp_message_async</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">send_tcp_message_async</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="secure-tcp-ssltls">Secure TCP (SSL/TLS)</h2>
+<p><code>kn_sock</code> supports secure TCP communication using SSL/TLS, both in code and via the CLI.</p>
+<h3 id="synchronous-secure-tcp-server">Synchronous Secure TCP Server</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_ssl_tcp_server</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_secure</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">client_socket</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received from </span><span class="si">{</span><span class="n">addr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">client_socket</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Secure response&quot;</span><span class="p">)</span>
+
+<span class="n">start_ssl_tcp_server</span><span class="p">(</span>
+    <span class="mi">8443</span><span class="p">,</span>
+    <span class="n">handle_secure</span><span class="p">,</span>
+    <span class="n">certfile</span><span class="o">=</span><span class="s2">&quot;server.crt&quot;</span><span class="p">,</span>
+    <span class="n">keyfile</span><span class="o">=</span><span class="s2">&quot;server.key&quot;</span><span class="p">,</span>
+    <span class="n">cafile</span><span class="o">=</span><span class="s2">&quot;ca.crt&quot;</span><span class="p">,</span>  <span class="c1"># Optional, for client cert verification</span>
+    <span class="n">require_client_cert</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># For mutual TLS</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="synchronous-secure-tcp-client">Synchronous Secure TCP Client</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_ssl_tcp_message</span>
+
+<span class="n">send_ssl_tcp_message</span><span class="p">(</span>
+    <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8443</span><span class="p">,</span> <span class="s2">&quot;Hello Secure&quot;</span><span class="p">,</span>
+    <span class="n">cafile</span><span class="o">=</span><span class="s2">&quot;ca.crt&quot;</span><span class="p">,</span>  <span class="c1"># Optional, for server verification</span>
+    <span class="n">certfile</span><span class="o">=</span><span class="s2">&quot;client.crt&quot;</span><span class="p">,</span> <span class="n">keyfile</span><span class="o">=</span><span class="s2">&quot;client.key&quot;</span>  <span class="c1"># For mutual TLS</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="asynchronous-secure-tcp-server">Asynchronous Secure TCP Server</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_async_ssl_tcp_server</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">handle_secure</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">writer</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received from </span><span class="si">{</span><span class="n">addr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Secure response&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">writer</span><span class="o">.</span><span class="n">drain</span><span class="p">()</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">start_async_ssl_tcp_server</span><span class="p">(</span>
+    <span class="mi">8443</span><span class="p">,</span>
+    <span class="n">handle_secure</span><span class="p">,</span>
+    <span class="n">certfile</span><span class="o">=</span><span class="s2">&quot;server.crt&quot;</span><span class="p">,</span>
+    <span class="n">keyfile</span><span class="o">=</span><span class="s2">&quot;server.key&quot;</span>
+<span class="p">))</span>
+</code></pre></div>
+<h3 id="asynchronous-secure-tcp-client">Asynchronous Secure TCP Client</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_ssl_tcp_message_async</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">send_ssl_tcp_message_async</span><span class="p">(</span>
+    <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8443</span><span class="p">,</span> <span class="s2">&quot;Hello Secure&quot;</span>
+<span class="p">))</span>
+</code></pre></div>
+<h3 id="cli-usage">CLI Usage</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Start a secure server</span>
+kn-sock<span class="w"> </span>run-ssl-tcp-server<span class="w"> </span><span class="m">8443</span><span class="w"> </span>server.crt<span class="w"> </span>server.key<span class="w"> </span>--cafile<span class="w"> </span>ca.crt<span class="w"> </span>--require-client-cert
+
+<span class="c1"># Send a secure message</span>
+kn-sock<span class="w"> </span>send-ssl-tcp<span class="w"> </span>localhost<span class="w"> </span><span class="m">8443</span><span class="w"> </span><span class="s2">&quot;Hello Secure&quot;</span><span class="w"> </span>--cafile<span class="w"> </span>ca.crt<span class="w"> </span>--certfile<span class="w"> </span>client.crt<span class="w"> </span>--keyfile<span class="w"> </span>client.key
+</code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> You must have valid certificate and key files. For testing, you can generate self-signed certificates using OpenSSL.</p>
+</blockquote>
+<h2 id="tcp-connection-pooling">TCP Connection Pooling</h2>
+<p><code>kn_sock</code> provides a TCPConnectionPool for efficient client-side connection reuse. This reduces connection overhead for frequent requests.</p>
+<h3 id="basic-usage-plain-tcp">Basic Usage (Plain TCP)</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">TCPConnectionPool</span>
+
+<span class="n">pool</span> <span class="o">=</span> <span class="n">TCPConnectionPool</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="n">max_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">idle_timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">pool</span><span class="o">.</span><span class="n">connection</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">pool</span><span class="o">.</span><span class="n">closeall</span><span class="p">()</span>  <span class="c1"># Clean up all connections</span>
+</code></pre></div>
+<h3 id="secure-usage-ssltls">Secure Usage (SSL/TLS)</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">TCPConnectionPool</span>
+
+<span class="n">pool</span> <span class="o">=</span> <span class="n">TCPConnectionPool</span><span class="p">(</span>
+    <span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">8443</span><span class="p">,</span> <span class="n">max_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">idle_timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">ssl</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cafile</span><span class="o">=</span><span class="s2">&quot;ca.crt&quot;</span><span class="p">,</span> <span class="n">certfile</span><span class="o">=</span><span class="s2">&quot;client.crt&quot;</span><span class="p">,</span> <span class="n">keyfile</span><span class="o">=</span><span class="s2">&quot;client.key&quot;</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="k">with</span> <span class="n">pool</span><span class="o">.</span><span class="n">connection</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Hello Secure&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">pool</span><span class="o">.</span><span class="n">closeall</span><span class="p">()</span>
+</code></pre></div>
+<ul>
+<li><code>max_size</code>: Maximum number of pooled connections.</li>
+<li><code>idle_timeout</code>: Seconds before idle connections are closed.</li>
+<li><code>ssl</code>, <code>cafile</code>, <code>certfile</code>, <code>keyfile</code>, <code>verify</code>: SSL/TLS options.</li>
+</ul>
+<h3 id="udp-messaging">UDP Messaging</h3>
+<h4 id="synchronous-udp-server">Synchronous UDP Server</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_udp_server</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_udp_message</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">server_socket</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle incoming UDP messages.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (bytes): The data received from the client.</span>
+<span class="sd">        addr (tuple): The address of the client.</span>
+<span class="sd">        server_socket (socket.socket): The server socket.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received from </span><span class="si">{</span><span class="n">addr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">start_udp_server</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="n">handle_udp_message</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="synchronous-udp-client">Synchronous UDP Client</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_udp_message</span>
+
+<span class="n">send_udp_message</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="asynchronous-udp-server">Asynchronous UDP Server</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_udp_server_async</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">handle_udp_message</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">transport</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle incoming UDP messages asynchronously.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (bytes): The data received from the client.</span>
+<span class="sd">        addr (tuple): The address of the client.</span>
+<span class="sd">        transport (asyncio.DatagramTransport): The transport object for the client.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received from </span><span class="si">{</span><span class="n">addr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">start_udp_server_async</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="n">handle_udp_message</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="asynchronous-udp-client">Asynchronous UDP Client</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_udp_message_async</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">send_udp_message_async</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="json-socket-communication">JSON Socket Communication</h3>
+<h4 id="json-server">JSON Server</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_json_server</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_json_message</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">client_socket</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle incoming JSON messages.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (dict): The JSON data received from the client.</span>
+<span class="sd">        addr (tuple): The address of the client.</span>
+<span class="sd">        client_socket (socket.socket): The client socket.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received from </span><span class="si">{</span><span class="n">addr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">client_socket</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;status&quot;: &quot;received&quot;}&#39;</span><span class="p">)</span>
+
+<span class="n">start_json_server</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="n">handle_json_message</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="json-client">JSON Client</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_json</span>
+
+<span class="n">send_json</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">})</span>
+</code></pre></div>
+<h3 id="file-transfer-over-tcp">File Transfer over TCP</h3>
+<h4 id="file-server">File Server</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_file_server</span>
+
+<span class="n">start_file_server</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;/path/to/save/directory&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="file-client">File Client</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_file</span>
+
+<span class="n">send_file</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;path/to/your/file.txt&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="async-file-transfer">Async File Transfer</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_file_server_async</span><span class="p">,</span> <span class="n">send_file_async</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+
+<span class="c1"># Async server</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">start_file_server_async</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;/path/to/save/directory&quot;</span><span class="p">))</span>
+
+<span class="c1"># Async client</span>
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">send_file_async</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;path/to/your/file.txt&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="live-videoaudio-streaming-multi-video-selection">Live Video/Audio Streaming (Multi-Video Selection)</h2>
+<p>The <code>kn_sock</code> library supports live video and audio streaming from one or more video files to multiple clients, with adaptive bitrate and smooth playback.</p>
+<blockquote>
+<p><strong>Note:</strong> For best compatibility, use video files encoded as mp4 (H.264). Some formats (e.g., AV1) may not be supported by your OpenCV/FFmpeg installation.</p>
+</blockquote>
+<h3 id="features_1">Features</h3>
+<ul>
+<li><strong>Multi-Video Support</strong>: Server can offer multiple videos; clients select which to play</li>
+<li><strong>Adaptive Bitrate</strong>: Server adjusts video quality per client based on buffer feedback</li>
+<li><strong>Jitter Buffer</strong>: Client-side buffering for smooth video/audio playback</li>
+<li><strong>Robust Audio Protocol</strong>: Audio stream uses magic numbers and timestamps for resynchronization</li>
+<li><strong>Real-time Feedback</strong>: Client sends buffer status to server for quality adjustment</li>
+</ul>
+<h3 id="live-stream-server-python">Live Stream Server (Python)</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_live_stream</span>
+
+<span class="c1"># Start a live stream server with multiple videos</span>
+<span class="n">start_live_stream</span><span class="p">(</span><span class="mi">9000</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;video1.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;video2.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;video3.mp4&quot;</span><span class="p">])</span>
+
+<span class="c1"># Or with a single video</span>
+<span class="n">start_live_stream</span><span class="p">(</span><span class="mi">9000</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;video.mp4&quot;</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="live-stream-client-python">Live Stream Client (Python)</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect_to_live_server</span>
+
+<span class="c1"># Connect to a live stream server</span>
+<span class="n">connect_to_live_server</span><span class="p">(</span><span class="s2">&quot;192.168.1.10&quot;</span><span class="p">,</span> <span class="mi">9000</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="advanced-usage-with-livestreamserverlivestreamclient">Advanced Usage with LiveStreamServer/LiveStreamClient</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.live_stream</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiveStreamServer</span><span class="p">,</span> <span class="n">LiveStreamClient</span>
+
+<span class="c1"># Server with custom configuration</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">LiveStreamServer</span><span class="p">(</span>
+    <span class="n">video_paths</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;video1.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;video2.mp4&quot;</span><span class="p">],</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span>
+    <span class="n">video_port</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span>
+    <span class="n">audio_port</span><span class="o">=</span><span class="mi">8001</span><span class="p">,</span>
+    <span class="n">control_port</span><span class="o">=</span><span class="mi">8010</span>
+<span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># Client with custom buffer settings</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">LiveStreamClient</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+    <span class="n">video_port</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span>
+    <span class="n">audio_port</span><span class="o">=</span><span class="mi">8001</span><span class="p">,</span>
+    <span class="n">control_port</span><span class="o">=</span><span class="mi">8010</span><span class="p">,</span>
+    <span class="n">video_buffer_ms</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>  <span class="c1"># 200ms video buffer</span>
+    <span class="n">audio_buffer_ms</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  <span class="c1"># 100ms audio buffer</span>
+    <span class="n">video_fps</span><span class="o">=</span><span class="mi">30</span>
+<span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="live-streaming-via-cli">Live Streaming via CLI</h3>
+<ul>
+<li><strong>Start a live stream server with multiple videos:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>kn-sock<span class="w"> </span>run-live-server<span class="w"> </span><span class="m">9000</span><span class="w"> </span>video1.mp4<span class="w"> </span>video2.mp4<span class="w"> </span>video3.mp4
+<span class="c1"># Optional: --host 0.0.0.0 --audio-port 9001</span>
+</code></pre></div>
+<ul>
+<li><strong>Connect as a live stream client:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>kn-sock<span class="w"> </span>connect-live-server<span class="w"> </span><span class="m">192</span>.168.1.10<span class="w"> </span><span class="m">9000</span>
+<span class="c1"># Optional: --audio-port 9001</span>
+</code></pre></div>
+<h3 id="how-it-works">How It Works</h3>
+<ol>
+<li><strong>Server Setup</strong>: Server extracts audio from video files using FFmpeg</li>
+<li><strong>Client Connection</strong>: Client connects to video, audio, and control ports</li>
+<li><strong>Video Selection</strong>: If multiple videos are available, client is prompted to select one</li>
+<li><strong>Streaming</strong>: Server streams video frames and audio chunks with timestamps</li>
+<li><strong>Adaptive Quality</strong>: Client sends buffer feedback; server adjusts JPEG quality (40-90)</li>
+<li><strong>Smooth Playback</strong>: Client uses jitter buffers to smooth out network irregularities</li>
+</ol>
+<h3 id="protocol-details">Protocol Details</h3>
+<ul>
+<li><strong>Video Protocol</strong>: Each frame is sent as <code>[8-byte timestamp][4-byte length][JPEG data]</code></li>
+<li><strong>Audio Protocol</strong>: Each chunk is sent as <code>[4-byte magic][8-byte timestamp][4-byte length][audio data]</code></li>
+<li><strong>Control Protocol</strong>: Client sends JSON feedback: <code>{"buffer_level": 0.2}</code></li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li><strong>Python Dependencies</strong>: <code>opencv-python</code>, <code>pyaudio</code>, <code>numpy</code></li>
+<li><strong>System Dependencies</strong>: <code>ffmpeg</code> (for audio extraction)</li>
+<li><strong>Network</strong>: TCP ports for video, audio, and control streams</li>
+</ul>
+<h2 id="websocket-support">WebSocket Support</h2>
+<p>kn_sock provides a minimal WebSocket server and client for real-time, bidirectional communication (e.g., chat, dashboards, live updates).</p>
+<ul>
+<li>Use <code>start_websocket_server(host, port, handler_func, ...)</code> to start a WebSocket server.</li>
+<li>Use <code>connect_websocket(host, port, ...)</code> to connect as a client.</li>
+</ul>
+<h3 id="example-websocket-echo-server">Example: WebSocket Echo Server</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_websocket_server</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">echo_handler</span><span class="p">(</span><span class="n">ws</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[WebSocket][SERVER] Client connected: </span><span class="si">{</span><span class="n">ws</span><span class="o">.</span><span class="n">addr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">ws</span><span class="o">.</span><span class="n">open</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">ws</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">msg</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">ws</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Echo: </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">ws</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">shutdown_event</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+<span class="n">server_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+    <span class="n">target</span><span class="o">=</span><span class="n">start_websocket_server</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">8765</span><span class="p">,</span> <span class="n">echo_handler</span><span class="p">),</span>
+    <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shutdown_event&quot;</span><span class="p">:</span> <span class="n">shutdown_event</span><span class="p">},</span>
+    <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">server_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="c1"># ... trigger shutdown_event as needed ...</span>
+</code></pre></div>
+<h3 id="example-websocket-client">Example: WebSocket Client</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect_websocket</span>
+<span class="n">ws</span> <span class="o">=</span> <span class="n">connect_websocket</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">8765</span><span class="p">)</span>
+<span class="n">ws</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;Hello WebSocket!&quot;</span><span class="p">)</span>
+<span class="n">reply</span> <span class="o">=</span> <span class="n">ws</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received: </span><span class="si">{</span><span class="n">reply</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ws</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> This implementation supports text frames only (no binary, no extensions, no SSL for browsers yet). Suitable for Python-to-Python or custom client/server use.</p>
+</blockquote>
+<h2 id="httphttps-client-support">HTTP/HTTPS Client Support</h2>
+<p>kn_sock provides simple HTTP and HTTPS client helpers for quick requests without external libraries.</p>
+<ul>
+<li><code>http_get(host, port=80, path='/', headers=None)</code></li>
+<li><code>http_post(host, port=80, path='/', data='', headers=None)</code></li>
+<li><code>https_get(host, port=443, path='/', headers=None, cafile=None)</code></li>
+<li><code>https_post(host, port=443, path='/', data='', headers=None, cafile=None)</code></li>
+</ul>
+<h3 id="example-http-getpost">Example: HTTP GET/POST</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">http_get</span><span class="p">,</span> <span class="n">http_post</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="n">http_get</span><span class="p">(</span><span class="s2">&quot;example.com&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="n">http_post</span><span class="p">(</span><span class="s2">&quot;httpbin.org&quot;</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;/post&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;foo=bar&amp;baz=qux&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="example-https-getpost">Example: HTTPS GET/POST</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">https_get</span><span class="p">,</span> <span class="n">https_post</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="n">https_get</span><span class="p">(</span><span class="s2">&quot;example.com&quot;</span><span class="p">,</span> <span class="mi">443</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="n">https_post</span><span class="p">(</span><span class="s2">&quot;httpbin.org&quot;</span><span class="p">,</span> <span class="mi">443</span><span class="p">,</span> <span class="s2">&quot;/post&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;foo=bar&amp;baz=qux&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> These helpers do not support redirects, chunked encoding, or cookies. For advanced HTTP features, use a full HTTP library.</p>
+</blockquote>
+<h2 id="http-server">HTTP Server</h2>
+<p>kn_sock provides a minimal HTTP server for serving static files and handling simple API routes.</p>
+<ul>
+<li>Use <code>start_http_server(host, port, static_dir=None, routes=None, shutdown_event=None)</code> to start the server.</li>
+<li><code>static_dir</code>: Directory to serve files from (e.g., index.html).</li>
+<li><code>routes</code>: Dict mapping (method, path) to handler functions. Handler signature: (request, client_socket).</li>
+<li><code>shutdown_event</code>: For graceful shutdown.</li>
+</ul>
+<h3 id="example-static-file-and-route-handlers">Example: Static File and Route Handlers</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_http_server</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">hello_route</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">client_sock</span><span class="p">):</span>
+    <span class="n">client_sock</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s2">Content-Type: text/plain</span><span class="se">\r\n</span><span class="s2">Content-Length: 5</span><span class="se">\r\n\r\n</span><span class="s2">Hello&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">echo_post</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">client_sock</span><span class="p">):</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="p">[</span><span class="s1">&#39;raw&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s2">Content-Type: text/plain</span><span class="se">\r\n</span><span class="s2">Content-Length: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span> <span class="o">+</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\r\n\r\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">body</span>
+    <span class="n">client_sock</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;static&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;static/index.html&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Hello from static file!&lt;/h1&gt;&quot;</span><span class="p">)</span>
+<span class="n">routes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;/hello&quot;</span><span class="p">):</span> <span class="n">hello_route</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="s2">&quot;/echo&quot;</span><span class="p">):</span> <span class="n">echo_post</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">shutdown_event</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+<span class="n">server_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+    <span class="n">target</span><span class="o">=</span><span class="n">start_http_server</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">),</span>
+    <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;static_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span> <span class="s2">&quot;routes&quot;</span><span class="p">:</span> <span class="n">routes</span><span class="p">,</span> <span class="s2">&quot;shutdown_event&quot;</span><span class="p">:</span> <span class="n">shutdown_event</span><span class="p">},</span>
+    <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">server_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="c1"># ... trigger shutdown_event as needed ...</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> This server is for prototyping and simple use cases. For production, use a full-featured HTTP server.</p>
+</blockquote>
+<h2 id="publishsubscribe-pubsub">Publish/Subscribe (Pub/Sub)</h2>
+<p>kn_sock provides a simple TCP-based pub/sub server and client for topic-based messaging.</p>
+<ul>
+<li>Use <code>start_pubsub_server(port, handler_func=None, host='0.0.0.0', shutdown_event=None)</code> to start the server.</li>
+<li>Use <code>PubSubClient(host, port)</code> for the client. Methods: <code>subscribe(topic)</code>, <code>unsubscribe(topic)</code>, <code>publish(topic, message)</code>, <code>recv(timeout=None)</code>.</li>
+</ul>
+<h3 id="example-pubsub-server">Example: Pub/Sub Server</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_pubsub_server</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+
+<span class="n">shutdown_event</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+<span class="n">server_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+    <span class="n">target</span><span class="o">=</span><span class="n">start_pubsub_server</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">9000</span><span class="p">,),</span>
+    <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shutdown_event&quot;</span><span class="p">:</span> <span class="n">shutdown_event</span><span class="p">},</span>
+    <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">server_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="c1"># ... trigger shutdown_event as needed ...</span>
+</code></pre></div>
+<h3 id="example-pubsub-client">Example: Pub/Sub Client</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">PubSubClient</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">PubSubClient</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">9000</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">&quot;news&quot;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s2">&quot;news&quot;</span><span class="p">,</span> <span class="s2">&quot;Hello, subscribers!&quot;</span><span class="p">)</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Protocol:</strong> All messages are JSON lines. Actions: <code>subscribe</code>, <code>unsubscribe</code>, <code>publish</code>. Server broadcasts published messages to all subscribers of a topic.</p>
+<p><strong>Use cases:</strong> Chat rooms, notifications, real-time data updates, event-driven apps.</p>
+</blockquote>
+<h2 id="remote-procedure-call-rpc">Remote Procedure Call (RPC)</h2>
+<p>kn_sock provides a simple TCP-based JSON-RPC server and client for remote function calls.</p>
+<ul>
+<li>Use <code>start_rpc_server(port, register_funcs, host='0.0.0.0', shutdown_event=None)</code> to start the server.</li>
+<li>Use <code>RPCClient(host, port)</code> for the client. Method: <code>call(function, *args, **kwargs)</code>.</li>
+</ul>
+<h3 id="example-rpc-server">Example: RPC Server</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_rpc_server</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">echo</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">msg</span>
+
+<span class="n">funcs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;add&quot;</span><span class="p">:</span> <span class="n">add</span><span class="p">,</span> <span class="s2">&quot;echo&quot;</span><span class="p">:</span> <span class="n">echo</span><span class="p">}</span>
+<span class="n">shutdown_event</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+<span class="n">server_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+    <span class="n">target</span><span class="o">=</span><span class="n">start_rpc_server</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">9001</span><span class="p">,</span> <span class="n">funcs</span><span class="p">),</span>
+    <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shutdown_event&quot;</span><span class="p">:</span> <span class="n">shutdown_event</span><span class="p">},</span>
+    <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">server_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="c1"># ... trigger shutdown_event as needed ...</span>
+</code></pre></div>
+<h3 id="example-rpc-client">Example: RPC Client</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">RPCClient</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">RPCClient</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">9001</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Hello!&quot;</span><span class="p">))</span>
+<span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Protocol:</strong> All requests and responses are JSON lines. Requests: <code>{method, params, kwargs}</code>. Responses: <code>{result}</code> or <code>{error}</code>.</p>
+<p><strong>Use cases:</strong> Distributed computing, remote control, microservices, automation.</p>
+</blockquote>
+<h2 id="command-line-interface">Command-Line Interface</h2>
+<p>The <code>kn-sock</code> library comes with a simple CLI for quick socket operations. You can use the following commands:</p>
+<ul>
+<li><strong>Send TCP Message</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>kn-sock<span class="w"> </span>send-tcp<span class="w"> </span>localhost<span class="w"> </span><span class="m">8080</span><span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span>
+</code></pre></div>
+<ul>
+<li><strong>Start TCP Server</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>kn-sock<span class="w"> </span>run-tcp-server<span class="w"> </span><span class="m">8080</span>
+</code></pre></div>
+<ul>
+<li><strong>Send UDP Message</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>kn-sock<span class="w"> </span>send-udp<span class="w"> </span>localhost<span class="w"> </span><span class="m">8080</span><span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span>
+</code></pre></div>
+<ul>
+<li><strong>Start UDP Server</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>kn-sock<span class="w"> </span>run-udp-server<span class="w"> </span><span class="m">8080</span>
+</code></pre></div>
+<ul>
+<li><strong>Send File</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>kn-sock<span class="w"> </span>send-file<span class="w"> </span>localhost<span class="w"> </span><span class="m">8080</span><span class="w"> </span>path/to/your/file.txt
+</code></pre></div>
+<ul>
+<li><strong>Start File Server</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>kn-sock<span class="w"> </span>run-file-server<span class="w"> </span><span class="m">8080</span><span class="w"> </span>/path/to/save/directory
+</code></pre></div>
+<h2 id="decorators">Decorators</h2>
+<p>The <code>.decorators</code> module provides useful decorators to enhance your socket handlers.</p>
+<h3 id="log_exceptions"><code>log_exceptions</code></h3>
+<p>Logs exceptions and optionally re-raises them.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">log_exceptions</span>
+
+<span class="nd">@log_exceptions</span><span class="p">(</span><span class="n">raise_error</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_message</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">client_socket</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle incoming messages with exception logging.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (bytes): The data received from the client.</span>
+<span class="sd">        addr (tuple): The address of the client.</span>
+<span class="sd">        client_socket (socket.socket): The client socket.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Your message handling code here</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h3 id="retry"><code>retry</code></h3>
+<p>Retries a function upon failure, with a delay between attempts.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">retry</span>
+
+<span class="nd">@retry</span><span class="p">(</span><span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">exceptions</span><span class="o">=</span><span class="p">(</span><span class="ne">Exception</span><span class="p">,))</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_message</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">client_socket</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle incoming messages with retry logic.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (bytes): The data received from the client.</span>
+<span class="sd">        addr (tuple): The address of the client.</span>
+<span class="sd">        client_socket (socket.socket): The client socket.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Your message handling code here</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h3 id="measure_time"><code>measure_time</code></h3>
+<p>Measures and prints the execution time of the wrapped function.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">measure_time</span>
+
+<span class="nd">@measure_time</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_message</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">client_socket</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle incoming messages with execution time measurement.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (bytes): The data received from the client.</span>
+<span class="sd">        addr (tuple): The address of the client.</span>
+<span class="sd">        client_socket (socket.socket): The client socket.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Your message handling code here</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h3 id="ensure_json_input"><code>ensure_json_input</code></h3>
+<p>Validates that the first argument is a valid JSON object (dict or str). Raises <code>InvalidJSONError</code> otherwise.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">ensure_json_input</span>
+
+<span class="nd">@ensure_json_input</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_json_message</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">client_socket</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Handle incoming JSON messages with input validation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (dict): The JSON data received from the client.</span>
+<span class="sd">        addr (tuple): The address of the client.</span>
+<span class="sd">        client_socket (socket.socket): The client socket.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Your JSON message handling code here</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h2 id="utilities">Utilities</h2>
+<p>The <code>.utils</code> module provides various utility functions to assist with socket programming.</p>
+<h3 id="network-utilities">Network Utilities</h3>
+<h4 id="get_free_port"><code>get_free_port</code></h4>
+<p>Finds a free port for TCP binding (useful for tests).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_free_port</span>
+
+<span class="n">port</span> <span class="o">=</span> <span class="n">get_free_port</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Free port: </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="get_local_ip"><code>get_local_ip</code></h4>
+<p>Returns the local IP address of the current machine.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_local_ip</span>
+
+<span class="n">ip</span> <span class="o">=</span> <span class="n">get_local_ip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Local IP: </span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="file-utilities">File Utilities</h3>
+<h4 id="chunked_file_reader"><code>chunked_file_reader</code></h4>
+<p>Yields file data in chunks for streaming transfer.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">chunked_file_reader</span>
+
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">chunked_file_reader</span><span class="p">(</span><span class="s2">&quot;path/to/your/file.txt&quot;</span><span class="p">):</span>
+    <span class="c1"># Process each chunk</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h4 id="recv_all"><code>recv_all</code></h4>
+<p>Receives exactly <code>total_bytes</code> from a socket.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">recv_all</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">recv_all</span><span class="p">(</span><span class="n">client_socket</span><span class="p">,</span> <span class="n">total_bytes</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="progress-display">Progress Display</h3>
+<h4 id="print_progress"><code>print_progress</code></h4>
+<p>Prints file transfer progress in percentage.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_progress</span>
+
+<span class="n">print_progress</span><span class="p">(</span><span class="n">received_bytes</span><span class="p">,</span> <span class="n">total_bytes</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="json-utility">JSON Utility</h3>
+<h4 id="is_valid_json"><code>is_valid_json</code></h4>
+<p>Checks whether a string is valid JSON.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_valid_json</span>
+
+<span class="k">if</span> <span class="n">is_valid_json</span><span class="p">(</span><span class="n">json_string</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valid JSON&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid JSON&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="errors">Errors</h2>
+<p>The <code>.errors</code> module defines custom exceptions for the <code>kn_sock</code> library.</p>
+<h3 id="easysocketerror"><code>EasySocketError</code></h3>
+<p>Base exception for all <code>kn_sock</code> errors.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">EasySocketError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Your code here</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">EasySocketError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EasySocketError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="connection-related-errors">Connection-related Errors</h3>
+<h4 id="connectiontimeouterror"><code>ConnectionTimeoutError</code></h4>
+<p>Raised when a connection or read/write operation times out.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConnectionTimeoutError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Your code here</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">ConnectionTimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ConnectionTimeoutError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="portinuseerror"><code>PortInUseError</code></h4>
+<p>Raised when a specified port is already in use.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">PortInUseError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Your code here</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">PortInUseError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PortInUseError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="data-protocol-errors">Data &amp; Protocol Errors</h3>
+<h4 id="invalidjsonerror"><code>InvalidJSONError</code></h4>
+<p>Raised when a JSON message cannot be decoded.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">InvalidJSONError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Your code here</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">InvalidJSONError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;InvalidJSONError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="unsupportedprotocolerror"><code>UnsupportedProtocolError</code></h4>
+<p>Raised when a requested protocol is not supported.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">UnsupportedProtocolError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Your code here</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">UnsupportedProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UnsupportedProtocolError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="file-transfer-errors">File Transfer Errors</h3>
+<h4 id="filetransfererror"><code>FileTransferError</code></h4>
+<p>Raised when file transfer fails.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileTransferError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Your code here</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">FileTransferError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;FileTransferError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="available-functions">Available Functions</h2>
+<blockquote>
+<p><strong>Note:</strong> All server functions (TCP, UDP, SSL, async/sync) accept a <code>shutdown_event</code> parameter for graceful shutdown. Use <code>threading.Event</code> for sync servers and <code>asyncio.Event</code> for async servers.</p>
+</blockquote>
+<h3 id="tcp-functions">TCP Functions</h3>
+<ul>
+<li><code>start_tcp_server(port, handler_func, host='0.0.0.0', shutdown_event=None)</code></li>
+<li><code>start_threaded_tcp_server(port, handler_func, host='0.0.0.0', shutdown_event=None)</code></li>
+<li><code>send_tcp_message(host, port, message)</code></li>
+<li><code>send_tcp_bytes(host, port, data)</code></li>
+<li><code>start_async_tcp_server(port, handler_func, host='0.0.0.0', shutdown_event=None)</code></li>
+<li><code>send_tcp_message_async(host, port, message)</code></li>
+<li><code>start_ssl_tcp_server(port, handler_func, certfile, keyfile, cafile=None, require_client_cert=False, host='0.0.0.0', shutdown_event=None)</code></li>
+<li><code>send_ssl_tcp_message(host, port, message, cafile=None, certfile=None, keyfile=None, verify=True)</code></li>
+<li><code>start_async_ssl_tcp_server(port, handler_func, certfile, keyfile, cafile=None, require_client_cert=False, host='0.0.0.0', shutdown_event=None)</code></li>
+<li><code>send_ssl_tcp_message_async(host, port, message, cafile=None, certfile=None, keyfile=None, verify=True)</code></li>
+</ul>
+<h3 id="udp-functions">UDP Functions</h3>
+<ul>
+<li><code>start_udp_server(port, handler_func, host='0.0.0.0', shutdown_event=None)</code></li>
+<li><code>send_udp_message(host, port, message)</code></li>
+<li><code>start_udp_server_async(port, handler_func, host='0.0.0.0', shutdown_event=None)</code></li>
+<li><code>send_udp_message_async(host, port, message)</code></li>
+<li><code>send_udp_multicast(group, port, message, ttl=1)</code></li>
+<li><code>start_udp_multicast_server(group, port, handler_func, listen_ip='0.0.0.0', shutdown_event=None)</code></li>
+</ul>
+<h3 id="file-transfer-functions">File Transfer Functions</h3>
+<ul>
+<li><code>send_file(host, port, filepath)</code></li>
+<li><code>start_file_server(port, save_dir, host='0.0.0.0')</code></li>
+<li><code>send_file_async(host, port, filepath)</code></li>
+<li><code>start_file_server_async(port, save_dir, host='0.0.0.0')</code></li>
+</ul>
+<h3 id="json-functions">JSON Functions</h3>
+<ul>
+<li><code>start_json_server(port, handler_func, host='0.0.0.0')</code></li>
+<li><code>send_json(host, port, obj, timeout=5)</code></li>
+<li><code>start_json_server_async(port, handler_func, host='0.0.0.0')</code></li>
+<li><code>send_json_async(host, port, obj)</code></li>
+<li><code>send_json_response(sock, data)</code></li>
+<li><code>send_json_response_async(writer, data)</code></li>
+</ul>
+<h3 id="websocket-functions">WebSocket Functions</h3>
+<ul>
+<li><code>start_websocket_server(host, port, handler, shutdown_event=None)</code></li>
+<li><code>connect_websocket(host, port, resource='/', headers=None)</code></li>
+</ul>
+<h3 id="httphttps-functions">HTTP/HTTPS Functions</h3>
+<ul>
+<li><code>http_get(host, port=80, path='/', headers=None)</code></li>
+<li><code>http_post(host, port=80, path='/', data='', headers=None)</code></li>
+<li><code>https_get(host, port=443, path='/', headers=None, cafile=None)</code></li>
+<li><code>https_post(host, port=443, path='/', data='', headers=None, cafile=None)</code></li>
+<li><code>start_http_server(host, port, static_dir=None, routes=None, shutdown_event=None)</code></li>
+</ul>
+<h3 id="pubsub-functions">Pub/Sub Functions</h3>
+<ul>
+<li><code>start_pubsub_server(port, handler_func=None, host='0.0.0.0', shutdown_event=None)</code></li>
+<li><code>PubSubClient(host, port)</code></li>
+</ul>
+<h3 id="rpc-functions">RPC Functions</h3>
+<ul>
+<li><code>start_rpc_server(port, register_funcs, host='0.0.0.0', shutdown_event=None)</code></li>
+<li><code>RPCClient(host, port)</code></li>
+</ul>
+<h3 id="live-streaming-functions">Live Streaming Functions</h3>
+<ul>
+<li><code>start_live_stream(port, video_paths, host='0.0.0.0', audio_port=None)</code></li>
+<li><code>connect_to_live_server(ip, port, audio_port=None)</code></li>
+</ul>
+<h2 id="multi-client-video-chat-with-voice">Multi-Client Video Chat with Voice</h2>
+<p>The <code>kn_sock</code> library now supports real-time multi-client video chat with voice, allowing multiple users to join a room and communicate with both video and audio in real time.</p>
+<h3 id="features_2">Features</h3>
+<ul>
+<li><strong>Multi-client support</strong>: Multiple users can join the same room and see/hear each other.</li>
+<li><strong>Rooms/Channels</strong>: Users can join named rooms; only users in the same room see/hear each other.</li>
+<li><strong>User Nicknames</strong>: Each client can set a nickname, which is shared with the server and other clients.</li>
+<li><strong>Text Chat</strong>: Real-time text messaging with chat overlay on video window.</li>
+<li><strong>Mute/Unmute</strong>: Toggle audio on/off with keyboard shortcut.</li>
+<li><strong>Video On/Off</strong>: Toggle video camera on/off with keyboard shortcut.</li>
+<li><strong>Real-time video and audio</strong>: Uses OpenCV for video and PyAudio for audio.</li>
+<li><strong>Simple API</strong>: Easy to start a server or connect as a client.</li>
+</ul>
+<h3 id="requirements_1">Requirements</h3>
+<ul>
+<li><strong>Python Dependencies</strong>: <code>opencv-python</code>, <code>pyaudio</code>, <code>numpy</code>, <code>pickle</code></li>
+<li><strong>Hardware</strong>: Webcam and microphone for each client</li>
+<li><strong>Network</strong>: TCP ports for video, audio, and text streams (default: 9000, 9001, and 9002)</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Audio functionality requires proper PyAudio setup. If you encounter audio issues, you can disable audio and still use video and text chat features.</p>
+</blockquote>
+<h3 id="example-video-chat-server">Example: Video Chat Server</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.video_chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoChatServer</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="n">VideoChatServer</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">video_port</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">audio_port</span><span class="o">=</span><span class="mi">9001</span><span class="p">,</span> <span class="n">text_port</span><span class="o">=</span><span class="mi">9002</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Video chat server started on ports 9000 (video), 9001 (audio), and 9002 (text).&#39;</span><span class="p">)</span>
+
+<span class="c1"># Keep the server running</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">pass</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Server stopped.&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="example-video-chat-client-with-room-and-nickname">Example: Video Chat Client (with Room and Nickname)</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock.video_chat</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoChatClient</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">VideoChatClient</span><span class="p">(</span><span class="n">server_ip</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">video_port</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">audio_port</span><span class="o">=</span><span class="mi">9001</span><span class="p">,</span> <span class="n">text_port</span><span class="o">=</span><span class="mi">9002</span><span class="p">,</span> <span class="n">room</span><span class="o">=</span><span class="s1">&#39;myroom&#39;</span><span class="p">,</span> <span class="n">nickname</span><span class="o">=</span><span class="s1">&#39;alice&#39;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Connected to video chat server in room &quot;myroom&quot; as &quot;alice&quot;.&#39;</span><span class="p">)</span>
+
+<span class="c1"># Keep the client running</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">client</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+        <span class="k">pass</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Client stopped.&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="client-controls">Client Controls</h3>
+<p>When the video window is active, you can use these keyboard shortcuts:</p>
+<ul>
+<li><strong><code>m</code></strong>: Mute/unmute your microphone</li>
+<li><strong><code>v</code></strong>: Toggle your video camera on/off</li>
+<li><strong><code>q</code></strong>: Quit the application</li>
+</ul>
+<h3 id="text-chat">Text Chat</h3>
+<ul>
+<li>Type messages in the terminal and press Enter to send</li>
+<li>Chat messages appear as an overlay on the video window</li>
+<li>Messages include timestamps and sender nicknames</li>
+<li>Only users in the same room receive the messages</li>
+</ul>
+<h3 id="cli-example">CLI Example</h3>
+<p>You can also use the provided example scripts:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Start the server</span>
+python<span class="w"> </span>examples/video_chat_server.py
+
+<span class="c1"># Start a client (in another terminal)</span>
+python<span class="w"> </span>examples/video_chat_client.py<span class="w"> </span>&lt;server_ip&gt;<span class="w"> </span>&lt;room&gt;<span class="w"> </span>&lt;nickname&gt;
+</code></pre></div>
+<h3 id="cli-commands">CLI Commands</h3>
+<p>The <code>kn-sock</code> CLI also supports video chat commands:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Start a video chat server</span>
+kn-sock<span class="w"> </span>run-video-chat-server<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--video-port<span class="w"> </span><span class="m">9000</span><span class="w"> </span>--audio-port<span class="w"> </span><span class="m">9001</span><span class="w"> </span>--text-port<span class="w"> </span><span class="m">9002</span>
+
+<span class="c1"># Connect to a video chat server</span>
+kn-sock<span class="w"> </span>connect-video-chat<span class="w"> </span>&lt;server_ip&gt;<span class="w"> </span>&lt;room&gt;<span class="w"> </span>&lt;nickname&gt;<span class="w"> </span>--video-port<span class="w"> </span><span class="m">9000</span><span class="w"> </span>--audio-port<span class="w"> </span><span class="m">9001</span><span class="w"> </span>--text-port<span class="w"> </span><span class="m">9002</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> Press 'q' in the video window or Ctrl+C in the terminal to stop the client.</p>
+</blockquote>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>If you encounter issues with video or audio, run the diagnostic tool first:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>examples/video_chat_diagnostic.py
+</code></pre></div>
+<h4 id="common-issues-and-solutions">Common Issues and Solutions:</h4>
+<p><strong>Audio Issues (Most Common):</strong>
+If you encounter PyAudio assertion errors or audio crashes, try these solutions:</p>
+<ol>
+<li>
+<p><strong>Disable audio temporarily:</strong>
+   <div class="highlight"><pre><span></span><code>python<span class="w"> </span>examples/video_chat_client.py<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>myroom<span class="w"> </span>alice<span class="w"> </span>--no-audio
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Use the no-audio client:</strong>
+   <div class="highlight"><pre><span></span><code>python<span class="w"> </span>examples/video_chat_client_no_audio.py<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>myroom<span class="w"> </span>alice
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Test audio separately:</strong>
+   <div class="highlight"><pre><span></span><code>python<span class="w"> </span>examples/test_audio_only.py
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Install audio drivers (Arch Linux):</strong>
+   <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>pulseaudio<span class="w"> </span>pulseaudio-alsa
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Set audio environment variables:</strong>
+   <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PULSE_SERVER</span><span class="o">=</span>unix:/tmp/pulse-socket
+<span class="nb">export</span><span class="w"> </span><span class="nv">ALSA_PCM_CARD</span><span class="o">=</span><span class="m">0</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Display Issues:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Set display backend for OpenCV</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">QT_QPA_PLATFORM</span><span class="o">=</span>xcb
+</code></pre></div></p>
+<p><strong>Camera Issues:</strong>
+- Make sure your camera is not in use by another application
+- Check camera permissions
+- Try different camera device numbers if you have multiple cameras</p>
+<p><strong>Dependencies:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install required packages</span>
+pip<span class="w"> </span>install<span class="w"> </span>opencv-python<span class="w"> </span>pyaudio<span class="w"> </span>numpy
+</code></pre></div></p>
+<p><strong>Note:</strong> The video chat feature works perfectly without audio. If you have persistent audio issues, you can still use video and text chat functionality.</p>
+<hr />
+<h2 id="real-world-examples">Real World Examples</h2>
+<p>Explore ready-to-run scripts that solve common networking problems using kn-sock:</p>
+<ul>
+<li><a href="real_world_examples/iot_protocol.py">IoT Protocol</a>: Custom JSON protocol for IoT devices</li>
+<li><a href="real_world_examples/file_transfer.py">File Transfer</a>: Secure file transfer between machines</li>
+<li><a href="real_world_examples/chat_app.py">Chat Application</a>: Real-time chat using WebSockets</li>
+<li><a href="real_world_examples/microservice_rpc.py">Microservice RPC</a>: Remote procedure calls between services</li>
+<li><a href="real_world_examples/remote_control.py">Remote Control</a>: Remote monitoring and control of applications</li>
+<li><a href="real_world_examples/http_api_server.py">HTTP API Server</a>: Serve static files and simple APIs</li>
+<li><a href="real_world_examples/live_streaming.py">Live Streaming</a>: Live video/audio streaming</li>
+<li><a href="real_world_examples/test_utilities.py">Test Utilities</a>: Network test and utility scripts</li>
+</ul>
+<p>See the <a href="real_world_examples/">Real World Examples directory</a> for all scripts and details.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

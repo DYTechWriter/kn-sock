@@ -1,0 +1,5442 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kn-sock.khagendraneupane.com.np/archive/tcp/">
+      
+      
+        <link rel="prev" href="../http/">
+      
+      
+        <link rel="next" href="../udp/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>TCP - kn-sock</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tcp-utilities" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="kn-sock" class="md-header__button md-logo" aria-label="kn-sock" data-md-component="logo">
+      
+  <img src="../../kn-sock_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            kn-sock
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TCP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/KhagendraN/kn-sock" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="kn-sock" class="md-nav__button md-logo" aria-label="kn-sock" data-md-component="logo">
+      
+  <img src="../../kn-sock_logo.png" alt="logo">
+
+    </a>
+    kn-sock
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/KhagendraN/kn-sock" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/server_live.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Streaming Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/client_live.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Streaming Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/tcp_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCP Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/tcp_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCP Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/udp_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UDP Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/udp_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UDP Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/http_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/http_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/https_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTPS Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/websocket_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSocket Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/websocket_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSocket Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/pubsub_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PubSub Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/pubsub_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PubSub Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/rpc_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPC Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/rpc_client.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPC Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Browse All
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Real World Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Real World Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../real_world_examples/iot_protocol.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IoT Protocol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../real_world_examples/file_transfer.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Transfer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../real_world_examples/chat_app.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chat Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../real_world_examples/microservice_rpc.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microservice RPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../real_world_examples/remote_control.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Remote Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../real_world_examples/http_api_server.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP API Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../real_world_examples/live_streaming.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Streaming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../real_world_examples/test_utilities.py" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test Utilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TEST DOC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/tcp_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCP TEST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/api_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/websocket.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSocket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Messaging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/file_transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Transfer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/live_stream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Streaming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/pubsub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pub/Sub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/rpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Queues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/interactive_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive TCP Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Command-Line Interface
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Command-Line Interface
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HTTP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            HTTP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../http/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../http/python-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the Python API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../http/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../http/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    WebSocket
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            WebSocket
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../websocket/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../websocket/python-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the Python API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../websocket/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../websocket/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TCP Utilities
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            TCP Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcp/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcp/python-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the Python API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcp/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tcp/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UDP Utilities
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            UDP Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../udp/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../udp/python-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the Python API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../udp/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../udp/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    TCP
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    TCP
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-a-tcp-echo-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Run a TCP Echo Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-send-a-tcp-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Send a TCP Message
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Send a TCP Message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-api-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python API Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python API Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-a-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start a TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-tcp-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send a TCP Message
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Issues &amp; Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python API Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-quickstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Quickstart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-server-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Server APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Server APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_threaded_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_threaded_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_async_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_async_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-client-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Client APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Client APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_tcp_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_tcp_message
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_tcp_bytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_tcp_bytes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_tcp_message_async" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_tcp_message_async
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-pools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Pools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Pools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.TCPConnectionPool" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCPConnectionPool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssltls-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL/TLS Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSL/TLS Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_ssl_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_ssl_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_async_ssl_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_async_ssl_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssltls-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL/TLS Client
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSL/TLS Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_ssl_tcp_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_ssl_tcp_message
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_ssl_tcp_message_async" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_ssl_tcp_message_async
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UDP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../websocket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSocket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-run-a-tcp-echo-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Run a TCP Echo Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-send-a-tcp-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Send a TCP Message
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Send a TCP Message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-api-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python API Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python API Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-a-tcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start a TCP Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-tcp-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send a TCP Message
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Issues &amp; Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python API Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-quickstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Quickstart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-server-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Server APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Server APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_threaded_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_threaded_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_async_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_async_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-client-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Client APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Client APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_tcp_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_tcp_message
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_tcp_bytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_tcp_bytes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_tcp_message_async" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_tcp_message_async
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-pools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Pools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Pools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.TCPConnectionPool" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCPConnectionPool
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssltls-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL/TLS Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSL/TLS Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_ssl_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_ssl_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.start_async_ssl_tcp_server" class="md-nav__link">
+    <span class="md-ellipsis">
+      start_async_ssl_tcp_server
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssltls-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL/TLS Client
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSL/TLS Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synchronous_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_ssl_tcp_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_ssl_tcp_message
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kn_sock.tcp.send_ssl_tcp_message_async" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_ssl_tcp_message_async
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tcp-utilities">TCP Utilities</h1>
+<p>kn-sock provides both CLI and Python APIs for working with TCP servers and clients.<br />
+Use these commands to build, test, and automate network communication.</p>
+<h2 id="function-index">Function Index</h2>
+<table>
+<thead>
+<tr>
+<th>Function/Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#kn_sock.tcp.start_tcp_server">start_tcp_server</a></td>
+<td>Start a basic synchronous TCP server for single-connection, blocking I/O. Use for simple demos or network testing.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.start_threaded_tcp_server">start_threaded_tcp_server</a></td>
+<td>Multithreaded TCP server that spawns a thread per client. Best for serving multiple simultaneous connections with blocking I/O.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.send_tcp_message">send_tcp_message</a></td>
+<td>Synchronous TCP client: connects, sends a string, and logs the response (does not return it). For basic text protocols.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.send_tcp_bytes">send_tcp_bytes</a></td>
+<td>Synchronous TCP client for sending raw bytes (binary payloads), logging any server response. Useful for custom protocols.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.start_async_tcp_server">start_async_tcp_server</a></td>
+<td>Async TCP server using asyncio. Efficiently handles many connections in a single event loop. Recommended for async workloads.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.send_tcp_message_async">send_tcp_message_async</a></td>
+<td>Async TCP client: sends a string and logs the server response without blocking. Ideal for non-blocking client logic.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.TCPConnectionPool">TCPConnectionPool</a></td>
+<td>Thread-safe pool for managing/reusing TCP (and SSL) connections. Improves performance for high-throughput or threaded apps.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.start_ssl_tcp_server">start_ssl_tcp_server</a></td>
+<td>Synchronous SSL/TLS TCP server, with support for client cert verification (mTLS). Use for encrypted, authenticated communication.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.send_ssl_tcp_message">send_ssl_tcp_message</a></td>
+<td>Synchronous SSL/TLS client: connects, sends a string, logs the response. Secure text-based messaging.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.start_async_ssl_tcp_server">start_async_ssl_tcp_server</a></td>
+<td>Async SSL/TLS TCP server using asyncio. Handles encrypted connections concurrently in a secure event loop.</td>
+</tr>
+<tr>
+<td><a href="#kn_sock.tcp.send_ssl_tcp_message_async">send_ssl_tcp_message_async</a></td>
+<td>Async SSL/TLS client: connects, sends a string, and logs the response asynchronously. Best for secure non-blocking clients.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cli-commands">CLI Commands</h2>
+<h3 id="1-run-a-tcp-echo-server">1. Run a TCP Echo Server</h3>
+<p>Spin up a basic echo server that listens for text messages and replies with “Echo: ...”</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>run-tcp-server &lt;port&gt;</code></td>
+<td>Start a TCP echo server</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>knsock<span class="w"> </span>run-tcp-server<span class="w"> </span><span class="m">8080</span>
+<span class="c1"># Or (with pip): knsock run-tcp-server 8080</span>
+</code></pre></div>
+<strong>Output:</strong>
+<div class="highlight"><pre><span></span><code>[TCP] Server listening on 0.0.0.0:8080
+</code></pre></div></p>
+<h3 id="2-send-a-tcp-message">2. Send a TCP Message</h3>
+<p>Connect to a TCP server and send a text message.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>send-tcp &lt;host&gt; &lt;port&gt; &lt;message&gt;</code></td>
+<td>Send a message via TCP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>knsock<span class="w"> </span>send-tcp<span class="w"> </span><span class="m">172</span>.18.0.2<span class="w"> </span><span class="m">8080</span><span class="w"> </span><span class="s2">&quot;Hello TCP&quot;</span>
+</code></pre></div>
+<strong>Output:</strong>
+<div class="highlight"><pre><span></span><code>[TCP] Server response: Echo: Hello TCP
+</code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">How to Get the Container Name or ID</p>
+<p>Run <code>docker ps</code> to list running containers. The last column (<code>NAMES</code>) is the container name.</p>
+<p>Example output:
+<div class="highlight"><pre><span></span><code>CONTAINER ID   IMAGE         ...   NAMES
+c8abcb1a321d   knsock_knsock ...  knsock_knsock_run-tcp-server_1
+</code></pre></div></p>
+<p>Use this name or the CONTAINER ID in <code>docker inspect</code> to get the IP address.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">How to Find the Server IP in Docker</p>
+<p>Replace <code>172.18.0.2</code> with the IP address of your running TCP server container.</p>
+<p>You can find the container's IP by running:
+<div class="highlight"><pre><span></span><code>docker inspect -f &#39;{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39; &lt;container_name_or_id&gt;
+</code></pre></div></p>
+<p>Use this IP as the <code>&lt;host&gt;</code> parameter for the <code>send-tcp</code> command.</p>
+</div>
+<h4 id="options-table">Options Table</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;port&gt;</code></td>
+<td>Port number for server/client</td>
+</tr>
+<tr>
+<td><code>&lt;host&gt;</code></td>
+<td>IP or hostname of server (client only)</td>
+</tr>
+<tr>
+<td><code>&lt;message&gt;</code></td>
+<td>Message to send (client only)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="python-api-usage-examples">Python API Usage Examples</h2>
+<h3 id="start-a-tcp-server">Start a TCP Server</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_tcp_server</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">echo_handler</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">conn</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received from </span><span class="si">{</span><span class="n">addr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Echo: &quot;</span> <span class="o">+</span> <span class="n">data</span><span class="p">)</span>
+
+<span class="n">start_tcp_server</span><span class="p">(</span><span class="mi">8080</span><span class="p">,</span> <span class="n">echo_handler</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="send-a-tcp-message">Send a TCP Message</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">kn_sock</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_tcp_message</span>
+<span class="n">send_tcp_message</span><span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="s2">&quot;Hello TCP&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="sample-output">Sample Output</h3>
+<p><strong>Server terminal:</strong>
+<div class="highlight"><pre><span></span><code>[TCP] Server listening on 0.0.0.0:8080
+[TCP][SERVER] Received from (&#39;172.18.0.1&#39;, 49906): b&#39;Hello TCP&#39;
+</code></pre></div></p>
+<p><strong>Client terminal:</strong>
+<div class="highlight"><pre><span></span><code>[TCP] Server response: Echo: Hello TCP
+</code></pre></div></p>
+<h2 id="known-issues-troubleshooting">Known Issues &amp; Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Symptom/Output</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Port already in use</td>
+<td><code>OSError: [Errno 98] Address in use</code></td>
+<td>Use a different port or kill the existing process</td>
+</tr>
+<tr>
+<td>Docker: “Connection refused”</td>
+<td><code>ConnectionRefusedError</code></td>
+<td>Ensure server is running and reachable</td>
+</tr>
+<tr>
+<td>Hostname not found</td>
+<td><code>[Errno -2] Name or service not known</code></td>
+<td>Use container IP, not name (get with <code>docker inspect ...</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="testing">Testing</h2>
+<h3 id="manual-test">Manual Test</h3>
+<p>In one terminal:
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>knsock<span class="w"> </span>run-tcp-server<span class="w"> </span><span class="m">8080</span>
+</code></pre></div></p>
+<p>In another terminal:
+<div class="highlight"><pre><span></span><code><span class="c1"># Replace &lt;server-ip&gt; with your actual server IP</span>
+docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>knsock<span class="w"> </span>send-tcp<span class="w"> </span>&lt;server-ip&gt;<span class="w"> </span><span class="m">8080</span><span class="w"> </span><span class="s2">&quot;Hello TCP&quot;</span>
+<span class="c1"># Example:</span>
+docker-compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>knsock<span class="w"> </span>send-tcp<span class="w"> </span><span class="m">172</span>.18.0.2<span class="w"> </span><span class="m">8080</span><span class="w"> </span><span class="s2">&quot;Hello TCP&quot;</span>
+</code></pre></div></p>
+<p>If you see the following in your client terminal, the test passes:</p>
+<p><code>[TCP] Server response: Echo: Hello TCP</code></p>
+<h2 id="python-api-reference">Python API Reference</h2>
+<h2 id="api-quickstart">API Quickstart</h2>
+<pre><code>... Short how-to code blocks for common usage ...
+</code></pre>
+<h2 id="tcp-server-apis">TCP Server APIs</h2>
+<h3 id="synchronous">Synchronous</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.start_tcp_server"></a>
+    <div class="doc doc-contents first">
+
+        <p>Starts a synchronous TCP server (IPv4/IPv6 supported).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Port to bind.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler_func</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Function to handle (data, addr, client_socket).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Host to bind (IPv4 or IPv6).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;0.0.0.0&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>shutdown_event</code>
+            </td>
+            <td>
+                  <code><span title="threading.Event">Event</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If provided, server will exit when event is set.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="OSError">OSError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the port is unavailable or socket fails.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="socket.error">error</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For general network errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>def echo_handler(data, addr, sock):
+...     print(data)
+...     sock.sendall(data)
+start_tcp_server(8080, echo_handler)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.start_threaded_tcp_server"></a>
+    <div class="doc doc-contents first">
+
+        <p>Starts a multithreaded TCP server (IPv4/IPv6 supported).</p>
+<p>This function listens for incoming TCP connections on the specified port,
+spawning a new thread for each client. The handler function is called for
+each message received from a client.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Port to bind the server to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler_func</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Function to handle incoming data.
+Signature: (data: bytes, addr: tuple, client_socket: socket.socket) -&gt; None</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Host to bind (IPv4 or IPv6). Defaults to "0.0.0.0".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;0.0.0.0&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>shutdown_event</code>
+            </td>
+            <td>
+                  <code><span title="threading.Event">Event</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If provided, the server will exit gracefully when this event is set.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="OSError">OSError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the port is unavailable or socket operations fail.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="socket.error">error</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For network-related errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>def echo_handler(data, addr, sock):
+...     print(f"From {addr}: {data}")
+...     sock.sendall(b"Echo: " + data)
+import threading
+shutdown = threading.Event()
+start_threaded_tcp_server(8080, echo_handler, shutdown_event=shutdown)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div><h3 id="asynchronous">Asynchronous</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.start_async_tcp_server"></a>
+    <div class="doc doc-contents first">
+
+        <p>Starts an asynchronous TCP server (IPv4/IPv6 supported).</p>
+<p>Listens for incoming TCP connections on the specified port using asyncio, spawning a coroutine for each client.
+The handler function is called with received data, the client address, and the StreamWriter for responses.
+Supports graceful shutdown when a shutdown_event is set.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Port to bind the server to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler_func</code>
+            </td>
+            <td>
+                  <code><span title="typing.Callable">Callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Async function to handle incoming data.
+Signature: (data: bytes, addr: tuple, writer: asyncio.StreamWriter) -&gt; Awaitable[None]</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Host to bind (IPv4 or IPv6). Defaults to "0.0.0.0".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;0.0.0.0&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>shutdown_event</code>
+            </td>
+            <td>
+                  <code><span title="asyncio.Event">Event</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If provided, the server will exit gracefully when this event is set.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="OSError">OSError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the port is unavailable or socket operations fail.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="asyncio.CancelledError">CancelledError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the server task is cancelled.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>import asyncio
+async def echo_handler(data, addr, writer):
+...     print(f"Received from {addr}: {data.decode()}")
+...     writer.write(b"Echo: " + data)
+...     await writer.drain()
+asyncio.run(start_async_tcp_server(8080, echo_handler))</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div><h2 id="tcp-client-apis">TCP Client APIs</h2>
+<h3 id="synchronous_1">Synchronous</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.send_tcp_message"></a>
+    <div class="doc doc-contents first">
+
+        <p>Sends a message to a TCP server (IPv4/IPv6 supported) and logs the server's response.</p>
+<p>Opens a TCP connection to the specified host and port, sends the given message
+as UTF-8 bytes, and logs the server's response (if any) to the logger.
+This function does not return the server's response.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The target host address (IPv4, IPv6, or hostname).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The target port number.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>message</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The message to send.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ConnectionError">ConnectionError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If unable to connect to the server.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="socket.error">error</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For network-related errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>send_tcp_message("localhost", 8080, "hello world")</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.send_tcp_bytes"></a>
+    <div class="doc doc-contents first">
+
+        <p>Sends raw bytes to a TCP server and logs the response.</p>
+<p>Opens a TCP connection to the specified host and port, sends the given
+data as-is (no encoding), and logs the server's response (if any) as bytes.
+This function does not return the response.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The target host address (IPv4, IPv6, or hostname).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The target port number.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>data</code>
+            </td>
+            <td>
+                  <code><span title="bytes">bytes</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The data to send.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ConnectionError">ConnectionError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If unable to connect to the server.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="socket.error">error</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For network-related errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>send_tcp_bytes("127.0.0.1", 8080, b"ping")</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div><h3 id="asynchronous_1">Asynchronous</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.send_tcp_message_async"></a>
+    <div class="doc doc-contents first">
+
+        <p>Sends a message to a TCP server asynchronously and returns the response.</p>
+<p>Opens an asynchronous TCP connection to the specified host and port,
+sends the given message as UTF-8 bytes, and awaits the server's response as a string.
+Returns None if no response is received.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The target host address (IPv4, IPv6, or hostname).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The target port number.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>message</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The message to send.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional[str]: The response from the server as a UTF-8 string, or None if no response is received.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ConnectionError">ConnectionError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If unable to connect to the server.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="socket.error">error</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For network-related errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>import asyncio
+response = asyncio.run(send_tcp_message_async("localhost", 8080, "hello async"))
+print(response)
+Echo: hello async</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div><h2 id="connection-pools">Connection Pools</h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="kn_sock.tcp.TCPConnectionPool"></a>
+    <div class="doc doc-contents first">
+
+
+        <p>Thread-safe TCP/SSL connection pool for efficient reuse of socket connections.</p>
+<p>Manages a pool of TCP or SSL connections to a given host and port, allowing
+multiple threads to acquire and release connections as needed. The pool
+automatically closes idle connections after a configurable timeout.</p>
+<p>Typical usage:</p>
+<pre><code>&gt;&gt;&gt; pool = TCPConnectionPool("localhost", 8080, max_size=5, idle_timeout=30)
+&gt;&gt;&gt; with pool.connection() as conn:
+...     conn.sendall(b"ping")
+...     response = conn.recv(1024)
+&gt;&gt;&gt; pool.closeall()
+</code></pre>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The server host address (IPv4, IPv6, or hostname).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The server port number.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>max_size</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Maximum number of concurrent connections. Defaults to 5.</p>
+              </div>
+            </td>
+            <td>
+                  <code>5</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>idle_timeout</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Seconds before idle connections are closed. Defaults to 30.</p>
+              </div>
+            </td>
+            <td>
+                  <code>30</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>ssl</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to use SSL/TLS for connections. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>cafile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to CA certificate for SSL/TLS verification.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>certfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to client certificate for mutual TLS.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>keyfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to client private key for mutual TLS.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>verify</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to verify the server certificate. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr class="doc-section-item">
+              <td><code><span title="kn_sock.tcp.TCPConnectionPool.connection">connection</span></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Acquire a connection from the pool as a context manager.</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="doc-section-item">
+              <td><code><span title="kn_sock.tcp.TCPConnectionPool.closeall">closeall</span></code></td>
+              <td>
+                <div class="doc-md-description">
+                  <p>Close all connections and clear the pool.</p>
+                </div>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+
+
+<details class="notes" open>
+  <summary>Notes</summary>
+  <ul>
+<li>Connections are managed in a thread-safe manner using an internal lock.</li>
+<li>Idle connections are closed and removed from the pool after <code>idle_timeout</code> seconds.</li>
+<li>When <code>max_size</code> is reached, additional requests block until a connection is released.</li>
+</ul>
+</details>
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>pool = TCPConnectionPool("localhost", 8080, ssl=True, cafile="ca.pem")
+with pool.connection() as conn:
+...     conn.sendall(b"hello")
+...     print(conn.recv(1024))
+pool.closeall()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="ssltls-server">SSL/TLS Server</h2>
+<h3 id="synchronous_2">Synchronous</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.start_ssl_tcp_server"></a>
+    <div class="doc doc-contents first">
+
+        <p>Starts a synchronous SSL/TLS TCP server with optional client certificate verification.</p>
+<p>Listens for incoming SSL/TLS connections on the specified port. For each client connection,
+wraps the socket with SSL/TLS, then invokes the handler function with the received data,
+client address, and SSL socket. Supports IPv4 and IPv6.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Port to bind the server to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler_func</code>
+            </td>
+            <td>
+                  <code><span title="callable">callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Function to handle incoming data.
+Signature: (data: bytes, addr: tuple, ssl_sock: ssl.SSLSocket) -&gt; None</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>certfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the server certificate file in PEM format.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>keyfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the server private key file in PEM format.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>cafile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to CA certificate for verifying client certificates.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>require_client_cert</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to require client certificates for mutual TLS. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Host to bind (IPv4 or IPv6). Defaults to "0.0.0.0".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;0.0.0.0&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>shutdown_event</code>
+            </td>
+            <td>
+                  <code><span title="threading.Event">Event</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If provided, server will exit gracefully when this event is set.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="OSError">OSError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the port is unavailable or socket operations fail.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ssl.SSLError">SSLError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For SSL/TLS handshake or certificate errors.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="socket.error">error</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For network-related errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>def echo_handler(data, addr, ssl_sock):
+...     print(f"Received from {addr}: {data}")
+...     ssl_sock.sendall(b"Echo: " + data)
+start_ssl_tcp_server(
+...     port=8443,
+...     handler_func=echo_handler,
+...     certfile="server.pem",
+...     keyfile="server-key.pem"
+... )</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div><h3 id="asynchronous_2">Asynchronous</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.start_async_ssl_tcp_server"></a>
+    <div class="doc doc-contents first">
+
+        <p>Starts an asynchronous SSL/TLS TCP server with optional client certificate verification.</p>
+<p>Listens for incoming SSL/TLS connections using asyncio on the specified port.
+For each client, wraps the connection with SSL/TLS and invokes the provided async handler function
+with the received data, client address, and StreamWriter. Supports IPv4 and IPv6, as well as graceful shutdown.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Port to bind the server to.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>handler_func</code>
+            </td>
+            <td>
+                  <code><span title="typing.Callable">Callable</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Async function to handle incoming data.
+Signature: (data: bytes, addr: tuple, writer: asyncio.StreamWriter) -&gt; Awaitable[None]</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>certfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the server certificate file in PEM format.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>keyfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the server private key file in PEM format.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>cafile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to CA certificate for verifying client certificates.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>require_client_cert</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to require client certificates for mutual TLS. Defaults to False.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Host to bind (IPv4 or IPv6). Defaults to "0.0.0.0".</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;0.0.0.0&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>shutdown_event</code>
+            </td>
+            <td>
+                  <code><span title="asyncio.Event">Event</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If provided, the server will exit gracefully when this event is set.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>None</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="OSError">OSError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the port is unavailable or socket operations fail.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ssl.SSLError">SSLError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For SSL/TLS handshake or certificate errors.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="asyncio.CancelledError">CancelledError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the server task is cancelled.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>import asyncio
+async def echo_handler(data, addr, writer):
+...     print(f"Received from {addr}: {data.decode()}")
+...     writer.write(b"Echo: " + data)
+...     await writer.drain()
+asyncio.run(start_async_ssl_tcp_server(
+...     port=8443,
+...     handler_func=echo_handler,
+...     certfile="server.pem",
+...     keyfile="server-key.pem"
+... ))</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div><h2 id="ssltls-client">SSL/TLS Client</h2>
+<h3 id="synchronous_3">Synchronous</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.send_ssl_tcp_message"></a>
+    <div class="doc doc-contents first">
+
+        <p>Sends a message to an SSL/TLS TCP server and returns the response.</p>
+<p>Opens a secure SSL/TLS connection to the specified host and port, sends the given message as UTF-8 bytes,
+and returns the server's response as a string if one is received. Supports server verification and mutual TLS.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The server host address (IPv4, IPv6, or hostname).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The server port number.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>message</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The message to send.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>cafile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to a CA certificate file for verifying the server.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>certfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the client certificate file for mutual TLS.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>keyfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the client private key file for mutual TLS.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>verify</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to verify the server certificate. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional[str]: The response from the server as a UTF-8 string, or None if no response is received.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ConnectionError">ConnectionError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If unable to connect to the server.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ssl.SSLError">SSLError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For SSL/TLS handshake or verification errors.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="socket.error">error</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For network-related errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>send_ssl_tcp_message(
+...     host="localhost",
+...     port=8443,
+...     message="secure hello",
+...     cafile="ca.pem"
+... )
+'Echo: secure hello'</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div><h3 id="asynchronous_3">Asynchronous</h3>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<a id="kn_sock.tcp.send_ssl_tcp_message_async"></a>
+    <div class="doc doc-contents first">
+
+        <p>Sends a message to an SSL/TLS TCP server asynchronously and returns the response.</p>
+<p>Opens an asynchronous SSL/TLS connection to the specified host and port,
+sends the given message as UTF-8 bytes, and awaits the server's response as a string.
+Supports server verification and mutual TLS authentication.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>host</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The server host address (IPv4, IPv6, or hostname).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>port</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The server port number.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>message</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The message to send.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>cafile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to a CA certificate file for verifying the server.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>certfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the client certificate file for mutual TLS.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>keyfile</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the client private key file for mutual TLS.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>verify</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to verify the server certificate. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional[str]: The response from the server as a UTF-8 string, or None if no response is received.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ConnectionError">ConnectionError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If unable to connect to the server.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ssl.SSLError">SSLError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For SSL/TLS handshake or verification errors.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="socket.error">error</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>For network-related errors.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>import asyncio
+response = asyncio.run(
+...     send_ssl_tcp_message_async(
+...         host="localhost",
+...         port=8443,
+...         message="secure async hello",
+...         cafile="ca.pem"
+...     )
+... )
+print(response)
+Echo: secure async hello</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
